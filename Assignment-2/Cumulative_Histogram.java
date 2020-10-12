@@ -20,7 +20,7 @@ public class Cumulative_Histogram {
         int histogram[] = new int[numbins];
         try {
             con = DriverManager.getConnection("jdbc:db2://localhost:50000/empl", "viraj", "");
-            pstmt=con.prepareStatement("select * from EMPLOYEE");
+            pstmt=con.prepareStatement("select * from EMPLOYEE where salary BETWEEN "+binstart+ " and "+binend );
             rs=pstmt.executeQuery();
             while(rs.next())
             {

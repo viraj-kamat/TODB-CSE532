@@ -13,7 +13,7 @@ CREATE PROCEDURE CUMULATIVEHISTOGRAM(IN binstart INTEGER, IN binend INTEGER,IN n
     DECLARE binFreqArr intArray;
     DECLARE binBelong INTEGER;
     DECLARE total INTEGER;
-    DECLARE c CURSOR FOR SELECT SALARY from EMPLOYEE where salary > binstart order by salary asc;
+    DECLARE c CURSOR FOR SELECT SALARY from EMPLOYEE where salary between binstart and binend order by salary asc;
     SET binrange = (binend-binstart)/numbins;
     SET counter = 1;
     SET total = 0;
