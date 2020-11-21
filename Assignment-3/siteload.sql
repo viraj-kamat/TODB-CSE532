@@ -1,0 +1,1 @@
+load from "C:\\Users\\viraj\\Desktop\\TODB-CSE532\\Assignment-3\\COVID19testingsites.csv" of del MESSAGES load.msg INSERT INTO cse532.siteoriginal ;
