@@ -48,7 +48,7 @@ if __name__ == "__main__":
     counts = lines.map(lambda x: mapper(x) ) \
                 .filter(lambda x : x != None) \
                 .groupByKey() \
-                .map(lambda x : (x[0],list(x[1])) ) 
+                .map(lambda x : (x[0], set(sorted(list(x[1]))) ) ) 
 
     counts.saveAsTextFile(outputLoc)
     spark.stop()
